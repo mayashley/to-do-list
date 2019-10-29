@@ -1,20 +1,30 @@
 import React, { Component } from "react";
-import Todo from './Todo';
+import Todo from "./Todo";
+import NewTodoForm from './NewTodoForm';
+
 class TodoList extends Component {
   constructor(props) {
     super(props);
-    this.state = { todos: [{task: "Buy Bread"}, {task: "Buy Milk"}] };
+    this.state = { todos: [] };
+
+    this.create = this.create.bind(this);
+  }
+
+  create(newTodo) {
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    });
   }
   render() {
-      const todos = this.state.todos.map(todo => {
-          return <Todo task={todo.task} />
-      })
+    console.log(this.state.todos);
+    const todos = this.state.todos.map(todo => {
+      return <Todo key={todo.id} task={todo.task} />;
+    });
     return (
       <div>
         <h1>Todo List</h1>
-        <ul>
-       {todos}
-        </ul>
+        <NewTodoForm createTodo={this.create}/>
+        <ul>{todos}</ul>
       </div>
     );
   }
