@@ -1,0 +1,36 @@
+.FormTodo {
+    display: flex;
+    margin: 0 13rem 4px;
+    padding: 1.1rem 3rem;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.TodoTask.completed {
+opacity: 0.6;
+}
+
+.TodoTask.completed:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    animation: strikeitem 0.5s ease-out 0s forwards;
+}
+
+@keyframes strikeitem {
+    to{
+        width: calc(100% + 1rem);
+    }
+}
+
+.TodoTask {
+    position: relative;
+    transition: opacity 0.4s linear;
+}
+
