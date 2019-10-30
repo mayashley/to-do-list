@@ -13,3 +13,8 @@ function App() {
 }
 
 export default App;
+
+
+
+
+// how to access local data in browser and save cookies to keep list once page is refreshed?????

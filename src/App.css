@@ -3,11 +3,17 @@
 .BgFullImage {
   background-image: url("./images/Johnny.jpg");
   background-repeat: no-repeat;
-   width: 100vw;
    height:100vh;
   background-position: center;
 }
 
 #GroceryList {
-  padding: 2rem 3rem 3rem;
+  padding: 2rem 1rem 3rem;
+}
+
+
+@keyframes strikeitem {
+#GroceryList {
+  padding: 2rem 1 rem 3rem;
+}
 }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Todo.css";
 
-
 class Todo extends Component {
   constructor(props) {
     super(props);
@@ -33,31 +32,42 @@ class Todo extends Component {
     });
   }
   handleToggle(evt) {
-    this.props.toggleTodo(this.props.id); 
+    this.props.toggleTodo(this.props.id);
   }
   render() {
     let result;
     if (this.state.isEditing) {
       result = (
-        <div className="FormTodo">
-          <form onSubmit={this.updateList}>
+        <div className="FormTodoEdit">
+          <form className="Todo-edit-form" onSubmit={this.updateList}>
             <input
               type="text"
               value={this.state.task}
               name="task"
               onChange={this.handleChange}
             />
-            <button>Save</button>
+            <button>
+              <i className="fas fa-check-square"></i>
+            </button>
           </form>
         </div>
       );
     } else {
       result = (
         <div className="FormTodo">
-          <li className={this.props.completed ? 'TodoTask completed' : "TodoTask"} onClick={this.handleToggle}>{this.props.task}</li>
-          <div>
-          <button onClick={this.toggleForm}>Edit</button>
-          <button onClick={this.handleRemove}>X</button>
+          <li
+            className={this.props.completed ? "TodoTask completed" : "TodoTask"}
+            onClick={this.handleToggle}
+          >
+            {this.props.task}
+          </li>
+          <div className="Todo-Buttons">
+            <button onClick={this.toggleForm}>
+              <i className="fas fa-pen-square"></i>
+            </button>
+            <button onClick={this.handleRemove}>
+              <i className="fas fa-trash-alt"></i>
+            </button>
           </div>
         </div>
       );

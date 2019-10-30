@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 import "./TodoList.css";
+import ScrollArea from "react-scrollbar";
+
+const scrollStyle = {
+  backgroundColor: "rgba(0, 0, 0, 0.445)",
+  
+
+}
 
 class TodoList extends Component {
   constructor(props) {
@@ -59,9 +66,23 @@ class TodoList extends Component {
     });
     return (
       <div className="TodoGrocery">
-        <h1>Grocery List <span>A modern Grocery List</span></h1>
-        <ul>{todos}</ul>
-        <NewTodoForm createTodo={this.create} />
+        <div className="noScroll">
+          <h1>
+            Grocery List <span>A modern Grocery List</span>
+          </h1>
+        </div>
+        <div className="noScrollAdd">
+          <NewTodoForm createTodo={this.create} />
+        </div>
+        <ScrollArea
+          speed={.8}
+          className="scroll"
+          horizontal={false}
+          verticalScrollbarStyle={scrollStyle}
+          smoothScrolling={true}
+        >
+          <ul>{todos}</ul>
+        </ScrollArea>
       </div>
     );
   }

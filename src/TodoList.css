@@ -1,37 +1,60 @@
 .TodoGrocery {
-    border: 2px rgba(15, 15, 15, 0.801) solid;
-    border-radius: 8px;
-    display:flex;
-    flex-direction: column;
-   align-items: center;
-   background-color: rgba(253, 253, 253, 0.664);
-   color: rgb(29, 29, 29);
-   margin: 4rem auto;
-   padding: 2rem 3rem 3rem;
-   max-width: 500px;
-
-   /* min-height: 200px; */
-
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(253, 253, 253, 0.801);
+  color: rgb(7, 7, 7);
+  margin: 4rem auto;
+  padding: 2rem 3rem 3rem;
+  max-width: 500px;
+  max-height: 90%;
 }
+
 .TodoGrocery h1 {
-font-weight: normal;
-font-size: 2.6rem;
-letter-spacing: 0.05em;
-border-bottom: 1px solid rgba(0, 0, 0, 0.301);
+  font-weight: normal;
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.253);
 }
 
 .TodoGrocery h1 span {
-    display: block;
-    font-size: 0.8rem;
-    margin-bottom: 0.7rem;
-    margin-left: 4px;
-    margin-top: 0.2rem;
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+  margin-left: 3px;
+  margin-top: 0.2rem;
 }
 
-
-
 .TodoGrocery ul {
-   
-    margin-top: 2.2rem;
-    list-style: none;
+  margin-top: 2.6rem;
+  list-style: none;
+}
+
+.scroll {
+  max-height: 40vh;
+  margin-top: 1em;
+  padding-right: 30px;
+  border-top: 1px rgba(0, 0, 0, 0.253) solid;
+}
+
+.noScrollAdd {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 413px) {
+  .TodoGrocery {
+    padding: 1rem 3rem 3rem;
+  }
+  .TodoGrocery h1 {
+    font-size: 1.8rem;
+  }
+
+  .TodoGrocery h1 span {
+    font-size: 0.7rem;
+    margin-top: 0.1rem;
+  }
+
+  .TodoGrocery ul {
+    margin-top: 1.1rem;
+  }
 }
